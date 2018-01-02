@@ -4,7 +4,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 # Specifies what code to execute
 class WebServerHandler(BaseHTTPRequestHandler):
 
-# Handles all get requests my webserver receives
+    # Handles all get requests my webserver receives
     def do_GET(self):
         if self.path.endswith("/hello"):
             self.send_response(200)
@@ -18,8 +18,8 @@ class WebServerHandler(BaseHTTPRequestHandler):
         else:
             self.send_error(404, 'File Not Found: %s' % self.path)
 
-# Instantiate our server and specify port 5000 
 
+# Instantiate our server and specify port 5000
 def main():
     try:
         port = 5000
