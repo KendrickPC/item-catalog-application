@@ -1,6 +1,11 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import cgi
 
+## import Create, Read, Update, and Delete Operations
+from database_setup import Base, Restaurant, MenuItem
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 # Specifies what code to execute
 class webServerHandler(BaseHTTPRequestHandler):
 
@@ -20,7 +25,7 @@ class webServerHandler(BaseHTTPRequestHandler):
                 print output
                 return
 
-            if self.path.endswith("/hola"):
+            if self.path.endswith("/restaurants"):
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
