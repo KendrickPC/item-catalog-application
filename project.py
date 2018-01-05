@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,jsonify, url_for, flash
+from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 app = Flask(__name__)
 
 from sqlalchemy import create_engine, asc
@@ -46,6 +46,7 @@ def newRestaurant():
   if request.method == 'POST':
       newRestaurant = Restaurant(name = request.form['name'])
       session.add(newRestaurant)
+      # flash messaging
       flash('New Restaurant %s Successfully Created' % newRestaurant.name)
       session.commit()
       return redirect(url_for('showRestaurants'))
@@ -59,6 +60,7 @@ def editRestaurant(restaurant_id):
   if request.method == 'POST':
       if request.form['name']:
         editedRestaurant.name = request.form['name']
+        # flash messaging
         flash('Restaurant Successfully Edited %s' % editedRestaurant.name)
         return redirect(url_for('showRestaurants'))
   else:
@@ -71,6 +73,7 @@ def deleteRestaurant(restaurant_id):
   restaurantToDelete = session.query(Restaurant).filter_by(id = restaurant_id).one()
   if request.method == 'POST':
     session.delete(restaurantToDelete)
+    # flash messaging
     flash('%s Successfully Deleted' % restaurantToDelete.name)
     session.commit()
     return redirect(url_for('showRestaurants', restaurant_id = restaurant_id))
@@ -95,6 +98,7 @@ def newMenuItem(restaurant_id):
       newItem = MenuItem(name = request.form['name'], description = request.form['description'], price = request.form['price'], course = request.form['course'], restaurant_id = restaurant_id)
       session.add(newItem)
       session.commit()
+      # flash messaging
       flash('New Menu %s Item Successfully Created' % (newItem.name))
       return redirect(url_for('showMenu', restaurant_id = restaurant_id))
   else:
@@ -117,6 +121,7 @@ def editMenuItem(restaurant_id, menu_id):
             editedItem.course = request.form['course']
         session.add(editedItem)
         session.commit() 
+        # flash messaging
         flash('Menu Item Successfully Edited')
         return redirect(url_for('showMenu', restaurant_id = restaurant_id))
     else:
@@ -131,6 +136,7 @@ def deleteMenuItem(restaurant_id,menu_id):
     if request.method == 'POST':
         session.delete(itemToDelete)
         session.commit()
+        # flash messaging
         flash('Menu Item Successfully Deleted')
         return redirect(url_for('showMenu', restaurant_id = restaurant_id))
     else:

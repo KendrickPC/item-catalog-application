@@ -12,3 +12,15 @@ https://docs.python.org/2/
 ## Chrome DevTools Overview
 https://developer.chrome.com/devtools
 
+## Python Decorators in 12 steps
+http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/
+
+## Understanding Python's With Statement
+http://effbot.org/zone/python-with-statement.htm
+
+## RESTful State Transfer
+https://en.wikipedia.org/wiki/Representational_state_transfer
+
+## JSON
+https://en.wikipedia.org/wiki/JSON
+
