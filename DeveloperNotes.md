@@ -24,3 +24,5 @@ https://en.wikipedia.org/wiki/Representational_state_transfer
 ## JSON
 https://en.wikipedia.org/wiki/JSON
 
+## Decorators for Login
+http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
