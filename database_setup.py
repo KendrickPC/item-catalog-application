@@ -45,7 +45,7 @@ class MenuItem(Base):
 
 
 
-engine = create_engine('sqlite:///restaurantmenu.db')
+engine = create_engine('sqlite:///everydaykenneth.db')
  
 
 Base.metadata.create_all(engine)
