@@ -113,10 +113,10 @@ def editCoffeeMenuItem(restaurant_id, menu_id):
             editedItem.course = request.form['course']
         session.add(editedItem)
         session.commit() 
-        flash('Menu Item Successfully Edited')
+        flash('Coffee Menu Item Successfully Edited')
         return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
     else:
-        return render_template('editmenuitem.html', restaurant_id = restaurant_id, menu_id = menu_id, item = editedItem)
+        return render_template('editCoffeeMenuItem.html', restaurant_id = restaurant_id, menu_id = menu_id, item = editedItem)
 
 
 #Delete a menu item
