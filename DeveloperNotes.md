@@ -26,3 +26,8 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Decorators for Login
 http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
+
+
+
+TO DO LIST: 
+Fix the favicon.ico HTTP/1.1 404 Error. 

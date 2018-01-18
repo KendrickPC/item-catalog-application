@@ -65,17 +65,17 @@ def editCoffeeShop(restaurant_id):
     return render_template('editCoffeeShop.html', restaurant = editedCoffeeShop)
 
 
-#Delete a restaurant
+#Delete a coffee shop
 @app.route('/restaurant/<int:restaurant_id>/delete/', methods = ['GET','POST'])
-def deleteRestaurant(restaurant_id):
-  restaurantToDelete = session.query(Restaurant).filter_by(id = restaurant_id).one()
+def deleteCoffeeShop(restaurant_id):
+  coffeeShopToDelete = session.query(Restaurant).filter_by(id = restaurant_id).one()
   if request.method == 'POST':
-    session.delete(restaurantToDelete)
-    flash('%s Successfully Deleted' % restaurantToDelete.name)
+    session.delete(coffeeShopToDelete)
+    flash('%s Successfully Deleted' % coffeeShopToDelete.name)
     session.commit()
     return redirect(url_for('showCoffeeShops', restaurant_id = restaurant_id))
   else:
-    return render_template('deleteRestaurant.html',restaurant = restaurantToDelete)
+    return render_template('deleteCoffeeShop.html',restaurant = coffeeShopToDelete)
 
 #Show a restaurant menu
 @app.route('/restaurant/<int:restaurant_id>/')

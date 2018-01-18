@@ -92,8 +92,9 @@ h3 {
 .divider {
 	height: 15px;
 }
+/*Changed to CodeTaiwan.org's Theme Color*/
 .divider.blue {
-	background-color: #42C3C9;
+	background-color: #1abc9c;
 }
 .divider.green {
 	background-color: #9FB80A;
