@@ -96,7 +96,7 @@ def newCoffeeMenuItem(restaurant_id):
   else:
       return render_template('newCoffeeMenuItem.html', restaurant_id = restaurant_id)
 
-#Edit a menu item
+#Edit a coffee menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/edit', methods=['GET','POST'])
 def editCoffeeMenuItem(restaurant_id, menu_id):
 
@@ -119,19 +119,18 @@ def editCoffeeMenuItem(restaurant_id, menu_id):
         return render_template('editCoffeeMenuItem.html', restaurant_id = restaurant_id, menu_id = menu_id, item = editedItem)
 
 
-#Delete a menu item
+#Delete a coffee menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/delete', methods = ['GET','POST'])
-def deleteMenuItem(restaurant_id,menu_id):
+def deleteCoffeeMenuItem(restaurant_id,menu_id):
     restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
     itemToDelete = session.query(MenuItem).filter_by(id = menu_id).one() 
     if request.method == 'POST':
         session.delete(itemToDelete)
         session.commit()
-        flash('Menu Item Successfully Deleted')
+        flash('Coffee Menu Item Successfully Deleted')
         return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
     else:
-        return render_template('deleteMenuItem.html', item = itemToDelete)
-
+        return render_template('deleteCoffeeMenuItem.html', item = itemToDelete)
 
 if __name__ == '__main__':
   app.secret_key = 'super_secret_key'
