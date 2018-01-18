@@ -39,8 +39,22 @@ webserver.py
 coffeeShops.html
 45 
 
-[] change newMenuItem to newCoffeeMenuItem
+[x] change newMenuItem to newCoffeeMenuItem
 webserver.py
 88
 menu.html
 40
+
+[] change editMenuItem to editCoffeeMenuItem
+webserver.py
+101, 
+menu.html
+65, 79, 93, 105
+
+
+
+
+
+
+
+

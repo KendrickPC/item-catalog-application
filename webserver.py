@@ -83,7 +83,7 @@ def showCoffeeMenu(restaurant_id):
     items = session.query(MenuItem).filter_by(restaurant_id = restaurant_id).all()
     return render_template('menu.html', items = items, restaurant = restaurant)
 
-#Create a new menu item
+#Create a new coffee menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/new/',methods=['GET','POST'])
 def newCoffeeMenuItem(restaurant_id):
   restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
@@ -94,11 +94,11 @@ def newCoffeeMenuItem(restaurant_id):
       flash('New Coffee Menu Item %s Successfully Created' % (newItem.name))
       return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
   else:
-      return render_template('newmenuitem.html', restaurant_id = restaurant_id)
+      return render_template('newCoffeeMenuItem.html', restaurant_id = restaurant_id)
 
 #Edit a menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/edit', methods=['GET','POST'])
-def editMenuItem(restaurant_id, menu_id):
+def editCoffeeMenuItem(restaurant_id, menu_id):
 
     editedItem = session.query(MenuItem).filter_by(id = menu_id).one()
     restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
