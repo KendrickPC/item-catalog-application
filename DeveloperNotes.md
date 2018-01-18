@@ -31,3 +31,10 @@ http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
 
 TO DO LIST: 
 Fix the favicon.ico HTTP/1.1 404 Error. 
+
+<!-- Refactoring Code Base -->
+[]  change showMenu to showCoffeeMenu
+webserver.py
+81, 95, 117, 131, 
+coffeeShops.html
+45, 

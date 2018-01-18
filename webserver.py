@@ -13,7 +13,6 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-
 #JSON APIs to view Restaurant Information
 @app.route('/restaurant/<int:restaurant_id>/menu/JSON')
 def restaurantMenuJSON(restaurant_id):
@@ -31,7 +30,6 @@ def menuItemJSON(restaurant_id, menu_id):
 def restaurantsJSON():
     restaurants = session.query(Restaurant).all()
     return jsonify(restaurants= [r.serialize for r in restaurants])
-
 
 #Show all coffee shops
 @app.route('/')
@@ -80,12 +78,10 @@ def deleteCoffeeShop(restaurant_id):
 #Show a restaurant menu
 @app.route('/restaurant/<int:restaurant_id>/')
 @app.route('/restaurant/<int:restaurant_id>/menu/')
-def showMenu(restaurant_id):
+def showCoffeeMenu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id = restaurant_id).all()
     return render_template('menu.html', items = items, restaurant = restaurant)
-     
-
 
 #Create a new menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/new/',methods=['GET','POST'])
@@ -96,7 +92,7 @@ def newMenuItem(restaurant_id):
       session.add(newItem)
       session.commit()
       flash('New Menu %s Item Successfully Created' % (newItem.name))
-      return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+      return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
   else:
       return render_template('newmenuitem.html', restaurant_id = restaurant_id)
 
@@ -118,7 +114,7 @@ def editMenuItem(restaurant_id, menu_id):
         session.add(editedItem)
         session.commit() 
         flash('Menu Item Successfully Edited')
-        return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+        return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
     else:
         return render_template('editmenuitem.html', restaurant_id = restaurant_id, menu_id = menu_id, item = editedItem)
 
@@ -132,11 +128,9 @@ def deleteMenuItem(restaurant_id,menu_id):
         session.delete(itemToDelete)
         session.commit()
         flash('Menu Item Successfully Deleted')
-        return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+        return redirect(url_for('showCoffeeMenu', restaurant_id = restaurant_id))
     else:
         return render_template('deleteMenuItem.html', item = itemToDelete)
-
-
 
 
 if __name__ == '__main__':
