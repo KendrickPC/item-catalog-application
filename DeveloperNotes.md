@@ -33,8 +33,14 @@ TO DO LIST:
 Fix the favicon.ico HTTP/1.1 404 Error. 
 
 <!-- Refactoring Code Base -->
-[]  change showMenu to showCoffeeMenu
+[x] change showMenu to showCoffeeMenu
 webserver.py
 81, 95, 117, 131, 
 coffeeShops.html
-45, 
+45 
+
+[] change newMenuItem to newCoffeeMenuItem
+webserver.py
+88
+menu.html
+40
