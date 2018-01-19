@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Google Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<!-- Bootstrap -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<!-- Custom CSS Stylesheet -->
 		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
 	</head>
 	<body>
@@ -10,5 +13,9 @@
 			{% block content %}
 			{% endblock %}
 		</div>
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Bootstrap Javascript -->
+		<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 	</body>
 </html>
