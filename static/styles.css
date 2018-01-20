@@ -1,3 +1,7 @@
+.navbar-brand {
+	padding: 0px;
+}
+
 * {
 	font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
 	font-weight: 700;
@@ -56,9 +60,9 @@ h3 {
 .btn {
 	padding: 20px;
 	margin: 0;
-	border-color: #9FB80A;
+	border-color: #1abc9c;
 	border-width: 2px;
-	color: #9FB80A;;
+	color: #1abc9c;;
 }
 .btn:hover {
 	border-color: #9FB80A;
