@@ -1,6 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
  
 Base = declarative_base()
@@ -37,12 +37,11 @@ class MenuItem(Base):
        """Return object data in easily serializeable format"""
        return {
            'name'         : self.name,
-           'description'         : self.description,
-           'id'         : self.id,
-           'price'         : self.price,
-           'course'         : self.course,
+           'description'  : self.description,
+           'id'           : self.id,
+           'price'        : self.price,
+           'course'       : self.course,
        }
-
 
 
 engine = create_engine('sqlite:///everydaykenneth.db')

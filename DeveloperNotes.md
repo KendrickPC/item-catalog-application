@@ -28,6 +28,9 @@ https://en.wikipedia.org/wiki/JSON
 http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
 
 
+## SQLalchemy.org backref
+http://docs.sqlalchemy.org/en/latest/orm/backref.html
+
 
 TO DO LIST: 
 Fix the favicon.ico HTTP/1.1 404 Error. 
