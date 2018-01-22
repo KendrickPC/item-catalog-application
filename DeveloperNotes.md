@@ -35,24 +35,7 @@ http://docs.sqlalchemy.org/en/latest/orm/backref.html
 TO DO LIST: 
 Fix the favicon.ico HTTP/1.1 404 Error. 
 
-<!-- Refactoring Code Base -->
-[x] change showMenu to showCoffeeMenu
-webserver.py
-81, 95, 117, 131, 
-coffeeShops.html
-45 
 
-[x] change newMenuItem to newCoffeeMenuItem
-webserver.py
-88
-menu.html
-40
-
-[x] change editMenuItem to editCoffeeMenuItem
-webserver.py
-101, 
-menu.html
-65, 79, 93, 105
 
 
 
